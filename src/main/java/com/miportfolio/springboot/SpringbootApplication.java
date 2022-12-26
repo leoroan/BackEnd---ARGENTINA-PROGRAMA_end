@@ -1,13 +1,15 @@
-package com.miPortfolio.miPortfolioII;
+package com.miportfolio.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MiPortfolioIiApplication {
+public class SpringbootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MiPortfolioIiApplication.class, args);
+		SpringApplication.run(SpringbootApplication.class, args);
 	}
+
+	
 
 }

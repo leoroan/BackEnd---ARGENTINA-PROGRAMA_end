@@ -1,4 +1,4 @@
-package com.miportfolio.springboot.model;
+package com.miportfolio.springboot.model.proyecto;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,26 +9,29 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
-public class Habilidades {
+public class Proyecto {
   
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private int id;
-  private String nombre_habilidad;
-  private int porcentaje;
-  private String priodo;
+  private String nombre;
   private String descripcion;
-  
-  public Habilidades() {
+  private String url_proyecto;
+  private String url_foto;
+
+  public Proyecto() {
   }
 
-  public Habilidades(int id, String nombre_habilidad, int porcentaje, String priodo, String descripcion) {
+  public Proyecto(int id, String nombre, String descripcion, String url_proyecto, String url_foto) {
     this.id = id;
-    this.nombre_habilidad = nombre_habilidad;
-    this.porcentaje = porcentaje;
-    this.priodo = priodo;
+    this.nombre = nombre;
     this.descripcion = descripcion;
+    this.url_proyecto = url_proyecto;
+    this.url_foto = url_foto;
   }
 
+  
+
+  
 
 }

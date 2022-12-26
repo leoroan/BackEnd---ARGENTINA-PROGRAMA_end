@@ -1,10 +1,10 @@
-package com.miportfolio.springboot.services;
+package com.miportfolio.springboot.services.experienciaServ;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.miportfolio.springboot.model.Experiencia;
+import com.miportfolio.springboot.model.experiencia.Experiencia;
 import com.miportfolio.springboot.repository.experienciaRepository;
 
 @Service

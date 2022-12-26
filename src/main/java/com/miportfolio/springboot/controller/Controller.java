@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.miportfolio.springboot.model.Experiencia;
-import com.miportfolio.springboot.services.IExperienciaService;
+import com.miportfolio.springboot.model.experiencia.Experiencia;
+import com.miportfolio.springboot.services.experienciaServ.IExperienciaService;
 
 @RestController
 public class Controller {

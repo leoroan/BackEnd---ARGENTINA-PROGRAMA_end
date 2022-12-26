@@ -1,4 +1,4 @@
-package com.miportfolio.springboot.model;
+package com.miportfolio.springboot.model.persona;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

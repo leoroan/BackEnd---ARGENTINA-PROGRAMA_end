@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.miportfolio.springboot.model.experiencia;
+import com.miportfolio.springboot.model.Experiencia;
 import com.miportfolio.springboot.services.IExperienciaService;
 
 @RestController
@@ -54,13 +54,13 @@ public class Controller {
     
 
     @PostMapping("/nueva/experiencias")
-    public void agregarExperiencia( @RequestBody experiencia exp){
+    public void agregarExperiencia( @RequestBody Experiencia exp){
         expServ.crearExperiencia(exp);
     }
     
     @GetMapping("/ver/experiencias")
     @ResponseBody
-    public List<experiencia> traerExp(){
+    public List<Experiencia> traerExp(){
         return expServ.verExperiencias();
     }
 

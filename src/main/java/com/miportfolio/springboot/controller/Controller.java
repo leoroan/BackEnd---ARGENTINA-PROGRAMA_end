@@ -13,14 +13,26 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.miportfolio.springboot.model.educacion.Educacion;
 import com.miportfolio.springboot.model.experiencia.Experiencia;
+import com.miportfolio.springboot.model.habilidades.Habilidades;
+import com.miportfolio.springboot.model.persona.Persona;
+import com.miportfolio.springboot.model.proyecto.Proyecto;
+import com.miportfolio.springboot.services.educacionServ.IEducacionService;
 import com.miportfolio.springboot.services.experienciaServ.IExperienciaService;
+import com.miportfolio.springboot.services.habilidadesServ.IHabilidadesService;
+import com.miportfolio.springboot.services.personaServ.IPersonaService;
+import com.miportfolio.springboot.services.proyectoServ.IProyectoServices;
 
 @RestController
 public class Controller {
 
     @Autowired 
     private IExperienciaService expServ;
+    private IEducacionService eduServ;
+    private IHabilidadesService habServ;
+    private IPersonaService persoServ;
+    private IProyectoServices proyServ;
 
 //    @PathVariable:
 //        los parámetros se brindan mediante diferentes
@@ -53,13 +65,13 @@ public class Controller {
     
 
     @PostMapping("/nueva/experiencias")
-    public void agregarExperiencia( @RequestBody Experiencia exp){
+    public void crea( @RequestBody Experiencia exp){
         expServ.crearExperiencia(exp);
     }
     
     @GetMapping("/ver/experiencias")
     @ResponseBody
-    public List<Experiencia> traerExp(){
+    public List<Experiencia> traerExperiencia(){
         return expServ.verExperiencias();
     }
 
@@ -73,7 +85,77 @@ public class Controller {
         return new ResponseEntity<>("Esto es un mensaje ResponseEntity", HttpStatus.OK);
     }
 
+    //////////////////////////////////////////////////
+
+    @PostMapping("/nueva/habilidad")
+    public void agregarHabilidad( @RequestBody Habilidades hab){
+        habServ.crearHabilidades(hab);
+    }
     
+    @GetMapping("/ver/habilidad")
+    @ResponseBody
+    public List<Habilidades> traerHabilidad(){
+        return habServ.verHabilidades();
+    }
+
+    @DeleteMapping("/borrar/{id}")
+    public void borrarHabilidad(@PathVariable int id){
+        habServ.borrarHabilidad(id);
+    }
+    
+    //////////////////////////////////////////////////
+
+    @PostMapping("/nueva/educacion")
+    public void agregarEducacion( @RequestBody Educacion edu){
+        eduServ.crearEducacion(edu);
+    }
+    
+    @GetMapping("/ver/educacion")
+    @ResponseBody
+    public List<Educacion> traerEducacion(){
+        return eduServ.verEducacion();
+    }
+
+    @DeleteMapping("/borrar/{id}")
+    public void borrarEducacion(@PathVariable int id){
+        eduServ.borrarEducacion(id);
+    }
+    
+    //////////////////////////////////////////////////
+
+    @PostMapping("/nueva/persona")
+    public void agregarPersona( @RequestBody Persona per){
+        persoServ.crearPersona(per);
+    }
+    
+    @GetMapping("/ver/persona")
+    @ResponseBody
+    public List<Persona> traerPersona(){
+        return persoServ.verPersonas();
+    }
+
+    @DeleteMapping("/borrar/{id}")
+    public void borrarPersona(@PathVariable int id){
+        persoServ.borrarPersona(id);
+    }
+
+    //////////////////////////////////////////////////
+
+    @PostMapping("/nueva/proyecto")
+    public void agregarProyecto( @RequestBody Proyecto proy){
+        proyServ.crearProyectos(proy);
+    }
+    
+    @GetMapping("/ver/proyecto")
+    @ResponseBody
+    public List<Proyecto> traeProyectos(){
+        return proyServ.verProyectos();
+    }
+
+    @DeleteMapping("/borrar/{id}")
+    public void borrarProyecto(@PathVariable int id){
+        proyServ.borrarProyecto(id);
+    }
     
 
 }

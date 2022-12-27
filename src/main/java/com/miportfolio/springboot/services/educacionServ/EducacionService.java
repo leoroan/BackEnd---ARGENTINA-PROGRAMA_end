@@ -10,6 +10,7 @@ public class EducacionService implements IEducacionService{
   
   @Autowired
   public educacionRepository eduRepo;
+  
   @Override
   public List<Educacion> verEducacion() {
     return eduRepo.findAll();

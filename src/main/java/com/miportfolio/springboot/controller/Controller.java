@@ -29,9 +29,13 @@ public class Controller {
 
     @Autowired 
     private IExperienciaService expServ;
+    @Autowired 
     private IEducacionService eduServ;
+    @Autowired 
     private IHabilidadesService habServ;
+    @Autowired 
     private IPersonaService persoServ;
+    @Autowired 
     private IProyectoServices proyServ;
 
 //    @PathVariable:
@@ -75,7 +79,7 @@ public class Controller {
         return expServ.verExperiencias();
     }
 
-    @DeleteMapping("/borrar/{id}")
+    @DeleteMapping("/borrar/experiencia/{id}")
     public void borrarExperiencia(@PathVariable int id){
         expServ.borrarExperiencia(id);
     }
@@ -98,7 +102,7 @@ public class Controller {
         return habServ.verHabilidades();
     }
 
-    @DeleteMapping("/borrar/{id}")
+    @DeleteMapping("/borrar/habilidad/{id}")
     public void borrarHabilidad(@PathVariable int id){
         habServ.borrarHabilidad(id);
     }
@@ -116,7 +120,7 @@ public class Controller {
         return eduServ.verEducacion();
     }
 
-    @DeleteMapping("/borrar/{id}")
+    @DeleteMapping("/borrar/educacion/{id}")
     public void borrarEducacion(@PathVariable int id){
         eduServ.borrarEducacion(id);
     }
@@ -134,7 +138,7 @@ public class Controller {
         return persoServ.verPersonas();
     }
 
-    @DeleteMapping("/borrar/{id}")
+    @DeleteMapping("/borrar/persona/{id}")
     public void borrarPersona(@PathVariable int id){
         persoServ.borrarPersona(id);
     }
@@ -152,7 +156,7 @@ public class Controller {
         return proyServ.verProyectos();
     }
 
-    @DeleteMapping("/borrar/{id}")
+    @DeleteMapping("/borrar/proyecto/{id}")
     public void borrarProyecto(@PathVariable int id){
         proyServ.borrarProyecto(id);
     }

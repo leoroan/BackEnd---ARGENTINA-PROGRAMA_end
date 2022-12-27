@@ -21,7 +21,7 @@ public class PersonaService implements IPersonaService{
 
   @Override
   public void crearPersona(Persona perso) {
-    this.persoRepo.save(perso);    
+    persoRepo.save(perso);    
   }
 
   @Override

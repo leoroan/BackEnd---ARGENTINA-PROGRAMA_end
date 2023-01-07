@@ -34,5 +34,7 @@ public class HabilidadesService implements IHabilidadesService{
   public Habilidades buscarHabilidad(int id) {
     return this.habRepo.findById(id).orElse(null);
   }
+
+  
   
 }

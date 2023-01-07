@@ -16,7 +16,7 @@ public class Habilidades {
   private int id;
   private String nombre_habilidad;
   private int porcentaje;
-  private String priodo;
+  private String priodo; 
   private String descripcion;
   
   public Habilidades() {

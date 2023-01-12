@@ -30,7 +30,7 @@ public class PersonaService implements IPersonaService{
   }
 
   @Override
-  public Persona buscarOPersona(int id) {
+  public Persona buscarPersona(int id) {
     return this.persoRepo.findById(id).orElse(null);
   }
 

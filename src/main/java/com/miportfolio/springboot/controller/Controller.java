@@ -89,6 +89,12 @@ public class Controller {
         return new ResponseEntity<>("Esto es un mensaje ResponseEntity", HttpStatus.OK);
     }
 
+    @GetMapping("/buscar/experiencia/{id}")
+    @ResponseBody
+    public Experiencia buscarExperiencia(@PathVariable int id){
+        return expServ.buscarExperiencia(id);
+    }
+
     //////////////////////////////////////////////////
 
     @PostMapping("/nueva/habilidad")
@@ -105,6 +111,12 @@ public class Controller {
     @DeleteMapping("/borrar/habilidad/{id}")
     public void borrarHabilidad(@PathVariable int id){
         habServ.borrarHabilidad(id);
+    }
+
+    @GetMapping("/buscar/habilidad/{id}")
+    @ResponseBody
+    public Habilidades buscarHabilidad(@PathVariable int id){
+        return habServ.buscarHabilidad(id);
     }
     
     //////////////////////////////////////////////////
@@ -124,7 +136,12 @@ public class Controller {
     public void borrarEducacion(@PathVariable int id){
         eduServ.borrarEducacion(id);
     }
-    
+
+    @GetMapping("/buscar/educacion/{id}")
+    @ResponseBody
+    public Educacion buscarEducacion(@PathVariable int id){
+        return eduServ.buscarEducacion(id);
+    }
     //////////////////////////////////////////////////
 
     @PostMapping("/nueva/persona")
@@ -143,6 +160,12 @@ public class Controller {
         persoServ.borrarPersona(id);
     }
 
+    @GetMapping("/buscar/persona/{id}")
+    @ResponseBody
+    public Persona buscarPersona(@PathVariable int id){
+        return persoServ.buscarPersona(id);
+    }
+
     //////////////////////////////////////////////////
 
     @PostMapping("/nueva/proyecto")
@@ -159,6 +182,12 @@ public class Controller {
     @DeleteMapping("/borrar/proyecto/{id}")
     public void borrarProyecto(@PathVariable int id){
         proyServ.borrarProyecto(id);
+    }
+
+    @GetMapping("/buscar/proyecto/{id}")
+    @ResponseBody
+    public Proyecto buscarProyecto(@PathVariable int id){
+        return proyServ.buscarProyecto(id);
     }
     
 

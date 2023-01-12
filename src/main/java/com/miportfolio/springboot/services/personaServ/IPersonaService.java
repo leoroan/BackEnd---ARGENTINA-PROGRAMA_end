@@ -10,7 +10,7 @@ public interface IPersonaService {
 
   public void borrarPersona (int id);
 
-  public Persona buscarOPersona (int id);
+  public Persona buscarPersona (int id);
 
   
 }
